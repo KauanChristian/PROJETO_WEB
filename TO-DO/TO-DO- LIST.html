@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #eee;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .concluida {
+      text-decoration: line-through;
+      background: #c8f7c5;
+    }
+
+    .botoes {
+      margin-top: 8px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .botoes button {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 align = "center">Lista de Tarefas</h1>
+
+    <input type="text" id="tarefa" placeholder="Digite a tarefa" />
+    <input type="date" id="data" />
+    <button onclick="adicionarTarefa()">Adicionar</button>
+
+    <p>Total de tarefas: <span id="contador">0</span></p>
+    <p id="mensagem" style="color:red;"></p>
+
+    <ul id="lista"></ul>
+  </div>
+
+  <script>
+    let tarefas = [];
+
+    function adicionarTarefa() {
+      let texto = document.getElementById("tarefa").value.trim();
+      let data = document.getElementById("data").value;
+      let mensagem = document.getElementById("mensagem");
+
+      if (texto.length < 3) {
+        mensagem.textContent = "A tarefa deve ter no mínimo 3 caracteres.";
+        return;
+      }
+
+      if (data === "") {
+        mensagem.textContent = "Escolha uma data.";
+        return;
+      }
+
+      tarefas.push({
+        texto: texto,
+        data: data,
+        concluida: false
+      });
+
+      document.getElementById("tarefa").value = "";
+      document.getElementById("data").value = "";
+      mensagem.textContent = "";
+
+      mostrarTarefas();
+    }
+
+    function mostrarTarefas() {
+      let lista = document.getElementById("lista");
+      let contador = document.getElementById("contador");
+
+      lista.innerHTML = "";
+      contador.textContent = tarefas.length;
+
+      for (let i = 0; i < tarefas.length; i++) {
+        let item = document.createElement("li");
+
+        if (tarefas[i].concluida) {
+          item.classList.add("concluida");
+        }
+
+        item.innerHTML = `
+          <strong>${tarefas[i].texto}</strong><br>
+          Data: ${tarefas[i].data}
+          <div class="botoes">
+            <button onclick="concluirTarefa(${i})">Concluir</button>
+            <button onclick="removerTarefa(${i})">Remover</button>
+          </div>
+        `;
+
+        lista.appendChild(item);
+      }
+    }
+
+    function concluirTarefa(index) {
+      tarefas[index].concluida = !tarefas[index].concluida;
+      mostrarTarefas();
+    }
+
+    function removerTarefa(index) {
+      tarefas.splice(index, 1);
+      mostrarTarefas();
+    }
+  </script>
+</body>
+</html>
