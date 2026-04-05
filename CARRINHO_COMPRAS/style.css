@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Faz largura e altura incluírem borda e padding */
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #222;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filtro {
+  display: flex; /* Coloca os elementos em linha */
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+select, button {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.layout {
+  display: grid; /* Usa grid para organizar as colunas */
+  grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+  gap: 20px;
+}
+
+.coluna {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.coluna h2 {
+  margin-bottom: 15px;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column; /* Direção vertical */
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fafafa;
+}
+
+.card p {
+  margin-bottom: 6px;
+}
+
+.card button {
+  background: #1976d2;
+  color: white; 
+  border: none;
+}
+
+.card button:hover {
+  background: #125aa0;
+}
+
+.item-carrinho {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.item-carrinho:last-child {
+  border-bottom: none; /* Remove a linha do último item */
+}
+
+.item-carrinho button {
+  margin-top: 8px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+}
+
+.item-carrinho button:hover {
+  background: #a61f1f;
+}
+
+.total {
+  margin-top: 18px;
+  font-size: 18px;
+}
+
+.btn-limpar {
+  margin-top: 12px;
+  width: 100%;
+  background: #444;
+  color: white;
+  border: none;
+}
+
+.btn-limpar:hover {
+  background: #222;
+}
+
+.mensagem-vazia {
+  color: #666;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr; /* Em telas pequenas, fica em uma coluna */
+  }
+}

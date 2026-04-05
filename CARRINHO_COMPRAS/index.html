@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Carrinho de Compras</title>
+  <link rel="stylesheet" href="style.css" /> <!-- Conecta o arquivo CSS -->
+</head>
+<body>
+  <main class="container"> <!-- Área principal do conteúdo -->
+    <h1>Sistema de Carrinho de Compras</h1>
+
+    <section class="filtro"> <!-- Seção do filtro -->
+      <label for="filtroProdutos">Filtrar produtos:</label>
+      <select id="filtroProdutos"> <!-- Caixa de seleção do filtro -->
+        <option value="todos">Todos</option>
+        <option value="ate50">Produtos até R$50</option>
+        <option value="acima50">Produtos acima de R$50</option>
+      </select>
+    </section>
+
+    <section class="layout"> <!-- Área que organiza produtos e carrinho lado a lado -->
+      <article class="coluna"> <!-- Coluna dos produtos -->
+        <h2>Produtos</h2>
+        <div id="listaProdutos" class="lista"></div> <!-- Onde os produtos serão exibidos -->
+      </article>
+
+      <article class="coluna"> <!-- Coluna do carrinho -->
+        <h2>Carrinho</h2> <!-- Título do carrinho -->
+        <div id="listaCarrinho" class="lista"></div> <!-- Onde os itens do carrinho serão exibidos -->
+        <div class="total">
+          <strong>Total:</strong> <span id="valorTotal">R$ 0,00</span>
+        </div>
+        <button id="btnLimparCarrinho" class="btn-limpar">Limpar carrinho</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script> <!-- Conecta o arquivo JavaScript -->
+</body>
+</html>
