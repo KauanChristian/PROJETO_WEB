@@ -1,0 +1,253 @@
+/* Fundo geral */
+* {
+    box-sizing: border-box;
+}
+
+/* Página */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top, #eef6ff 0%, #f7fafc 42%, #edf2f7 100%);
+    color: #1f2937;
+}
+
+/* Área principal */
+.page {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 32px 0 48px;
+}
+
+/* Cabeçalho */
+.hero {
+    background: linear-gradient(135deg, #064e3b, #0f766e);
+    color: #f8fafc;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 14px 28px rgba(2, 44, 34, 0.18);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pequena faixa no topo */
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ecfeff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+}
+
+/* Título principal do sistema */
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+/* Texto de apoio do cabeçalho */
+.hero p {
+    margin: 0;
+    opacity: 0.96;
+    max-width: 72ch;
+}
+
+/* Cartão branco para cada bloco do sistema */
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+}
+
+/* Mensagem de erro */
+.alert {
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+/* Estilo do aviso de erro */
+.alert-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* Texto curto usado abaixo dos títulos de seção */
+.section-text {
+    margin-top: 6px;
+    color: #475569;
+}
+
+/* Linha de informações da turma */
+.info-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+/* Formulários em grade */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.four-columns {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 600;
+    color: #334155;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    background: #fff;
+}
+
+input:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+}
+
+button {
+    grid-column: 1 / -1;
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0f766e, #115e59);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(1.03);
+    transform: translateY(-1px);
+}
+
+.student-box {
+    border: 1px solid #dbe4ee;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 16px;
+    background: #f8fbff;
+}
+
+.student-box legend {
+    font-weight: 700;
+    padding: 0 8px;
+    color: #0f172a;
+}
+
+/* Cartões com os resultados da turma. */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.summary-card span {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.summary-card strong {
+    font-size: 1.45rem;
+    color: #0f172a;
+}
+
+/* Mensagem de desempenho geral. */
+.highlight-message {
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: #ecfeff;
+    border-left: 4px solid #0f766e;
+    border-radius: 10px;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* Permite rolagem horizontal caso a tabela fique larga. */
+.table-wrap {
+    overflow-x: auto;
+}
+
+/* Tabela principal do relatório. */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+/* Cabeçalho da tabela. */
+thead th {
+    background: #ecfdf5;
+    color: #065f46;
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #bbf7d0;
+}
+
+/* Células da tabela. */
+tbody td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Linhas alternadas para facilitar a leitura. */
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Ajustes para telas menores. */
+@media (max-width: 900px) {
+    .form-grid,
+    .four-columns,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .info-line {
+        flex-direction: column;
+        gap: 0;
+    }
+}
