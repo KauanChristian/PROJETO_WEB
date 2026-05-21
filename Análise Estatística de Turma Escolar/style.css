@@ -13,14 +13,14 @@ body {
 }
 
 /* Área principal */
-.page {
+.pagina {
     width: min(1200px, 92%);
     margin: 0 auto;
     padding: 32px 0 48px;
 }
 
 /* Cabeçalho */
-.hero {
+.cabecalho {
     background: linear-gradient(135deg, #064e3b, #0f766e);
     color: #f8fafc;
     border-radius: 20px;
@@ -32,7 +32,7 @@ body {
 }
 
 /* Pequena faixa no topo */
-.hero-badge {
+.etiqueta-cabecalho {
     display: inline-block;
     background: rgba(255, 255, 255, 0.14);
     border: 1px solid rgba(255, 255, 255, 0.22);
@@ -45,21 +45,21 @@ body {
 }
 
 /* Título principal do sistema */
-.hero h1 {
+.cabecalho h1 {
     margin: 0 0 10px;
     font-size: 2rem;
     line-height: 1.2;
 }
 
 /* Texto de apoio do cabeçalho */
-.hero p {
+.cabecalho p {
     margin: 0;
     opacity: 0.96;
     max-width: 72ch;
 }
 
 /* Cartão branco para cada bloco do sistema */
-.card {
+.cartao {
     background: #ffffff;
     border-radius: 18px;
     padding: 24px;
@@ -69,7 +69,7 @@ body {
 }
 
 /* Mensagem de erro */
-.alert {
+.alerta {
     padding: 14px 16px;
     border-radius: 12px;
     margin-bottom: 18px;
@@ -77,33 +77,33 @@ body {
 }
 
 /* Estilo do aviso de erro */
-.alert-error {
+.alerta-erro {
     background: #fee2e2;
     color: #991b1b;
     border: 1px solid #fecaca;
 }
 
 /* Texto curto usado abaixo dos títulos de seção */
-.section-text {
+.texto-secao {
     margin-top: 6px;
     color: #475569;
 }
 
 /* Linha de informações da turma */
-.info-line {
+.linha-informacoes {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
 }
 
 /* Formulários em grade */
-.form-grid {
+.grade-formulario {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
 }
 
-.four-columns {
+.quatro-colunas {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -148,7 +148,7 @@ button:hover {
     transform: translateY(-1px);
 }
 
-.student-box {
+.caixa-aluno {
     border: 1px solid #dbe4ee;
     border-radius: 16px;
     padding: 18px;
@@ -156,21 +156,21 @@ button:hover {
     background: #f8fbff;
 }
 
-.student-box legend {
+.caixa-aluno legend {
     font-weight: 700;
     padding: 0 8px;
     color: #0f172a;
 }
 
 /* Cartões com os resultados da turma. */
-.summary-grid {
+.grade-resumo {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 16px;
     margin-bottom: 20px;
 }
 
-.summary-card {
+.cartao-resumo {
     background: #ffffff;
     border-radius: 18px;
     padding: 18px;
@@ -181,18 +181,18 @@ button:hover {
     gap: 10px;
 }
 
-.summary-card span {
+.cartao-resumo span {
     color: #64748b;
     font-size: 0.95rem;
 }
 
-.summary-card strong {
+.cartao-resumo strong {
     font-size: 1.45rem;
     color: #0f172a;
 }
 
 /* Mensagem de desempenho geral. */
-.highlight-message {
+.mensagem-destaque {
     margin-top: 10px;
     padding: 12px 14px;
     background: #ecfeff;
@@ -203,7 +203,7 @@ button:hover {
 }
 
 /* Permite rolagem horizontal caso a tabela fique larga. */
-.table-wrap {
+.envoltorio-tabela {
     overflow-x: auto;
 }
 
@@ -236,17 +236,17 @@ tbody tr:nth-child(even) {
 
 /* Ajustes para telas menores. */
 @media (max-width: 900px) {
-    .form-grid,
-    .four-columns,
-    .summary-grid {
+    .grade-formulario,
+    .quatro-colunas,
+    .grade-resumo {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
+    .cabecalho h1 {
         font-size: 1.6rem;
     }
 
-    .info-line {
+    .linha-informacoes {
         flex-direction: column;
         gap: 0;
     }

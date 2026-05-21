@@ -147,23 +147,23 @@ for ($i = 0; $i < $qtdAlunos; $i++) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="page">
-        <header class="hero">
-            <div class="hero-badge">Boletim da Turma</div>
+    <div class="pagina">
+        <header class="cabecalho">
+            <div class="etiqueta-cabecalho">Boletim da Turma</div>
             <h1>Sistema Web de Análise Estatística de Turma Escolar</h1>
             <p>Cadastro, processamento e relatório estatístico de uma turma.</p>
         </header>
 
         <?php if ($erro): ?>
-            <div class="alert alert-error"><?php echo h($erro); ?></div>
+            <div class="alerta alerta-erro"><?php echo h($erro); ?></div>
         <?php endif; ?>
 
         <?php if ($etapa === 'inicio'): ?>
-            <section class="card">
+            <section class="cartao">
                 <h2>Entrada de dados</h2>
-                <p class="section-text">Primeiro informe o nome da turma e a quantidade de alunos que serão cadastrados.</p>
+                <p class="texto-secao">Primeiro informe o nome da turma e a quantidade de alunos que serão cadastrados.</p>
 
-                <form method="post" class="form-grid">
+                <form method="post" class="grade-formulario">
                     <input type="hidden" name="etapa" value="preencher">
 
                     <label>
@@ -181,28 +181,28 @@ for ($i = 0; $i < $qtdAlunos; $i++) {
             </section>
 
         <?php elseif ($etapa === 'preencher'): ?>
-            <section class="card">
+            <section class="cartao">
                 <h2>Dados da turma</h2>
-                <div class="info-line">
+                <div class="linha-informacoes">
                     <p><strong>Turma:</strong> <?php echo h($turma); ?></p>
                     <p><strong>Quantidade de alunos:</strong> <?php echo (int)$qtdAlunos; ?></p>
                 </div>
             </section>
 
-            <section class="card">
+            <section class="cartao">
                 <h2>Cadastro dos alunos</h2>
-                <p class="section-text">Preencha o nome e as três notas de cada aluno. Depois clique em processar para gerar o relatório.</p>
+                <p class="texto-secao">Preencha o nome e as três notas de cada aluno. Depois clique em processar para gerar o relatório.</p>
 
-                <form method="post" class="stacked-form">
+                <form method="post" class="formulario-empilhado">
                     <input type="hidden" name="etapa" value="processar">
                     <input type="hidden" name="turma" value="<?php echo h($turma); ?>">
                     <input type="hidden" name="qtd_alunos" value="<?php echo (int)$qtdAlunos; ?>">
 
                     <?php for ($i = 0; $i < $qtdAlunos; $i++): ?>
-                        <fieldset class="student-box">
+                        <fieldset class="caixa-aluno">
                             <legend>Aluno <?php echo $i + 1; ?></legend>
 
-                            <div class="form-grid four-columns">
+                            <div class="grade-formulario quatro-colunas">
                                 <label>
                                     Nome
                                     <input type="text" name="nome[]" required placeholder="Nome do aluno">
@@ -231,57 +231,57 @@ for ($i = 0; $i < $qtdAlunos; $i++) {
             </section>
 
         <?php else: ?>
-            <section class="card">
+            <section class="cartao">
                 <h2>Relatório final da turma</h2>
                 <p><strong>Turma:</strong> <?php echo h($turma); ?></p>
-                <p class="highlight-message"><?php echo h(mensagem_desempenho((float)$resumo['percentual_aprovacao'])); ?></p>
+                <p class="mensagem-destaque"><?php echo h(mensagem_desempenho((float)$resumo['percentual_aprovacao'])); ?></p>
             </section>
 
-            <section class="summary-grid">
-                <article class="summary-card">
+            <section class="grade-resumo">
+                <article class="cartao-resumo">
                     <span>Média geral</span>
                     <strong><?php echo number_format((float)$resumo['media_turma'], 2, ',', '.'); ?></strong>
                 </article>
 
-                <article class="summary-card">
+                <article class="cartao-resumo">
                     <span>Maior média</span>
                     <strong><?php echo number_format((float)$resumo['maior_media'], 2, ',', '.'); ?></strong>
                 </article>
 
-                <article class="summary-card">
+                <article class="cartao-resumo">
                     <span>Menor média</span>
                     <strong><?php echo number_format((float)$resumo['menor_media'], 2, ',', '.'); ?></strong>
                 </article>
 
-                <article class="summary-card">
+                <article class="cartao-resumo">
                     <span>Aprovados</span>
                     <strong><?php echo (int)$resumo['aprovados']; ?></strong>
                 </article>
 
-                <article class="summary-card">
+                <article class="cartao-resumo">
                     <span>Recuperação</span>
                     <strong><?php echo (int)$resumo['recuperacao']; ?></strong>
                 </article>
 
-                <article class="summary-card">
+                <article class="cartao-resumo">
                     <span>Reprovados</span>
                     <strong><?php echo (int)$resumo['reprovados']; ?></strong>
                 </article>
 
-                <article class="summary-card">
+                <article class="cartao-resumo">
                     <span>Percentual de aprovação</span>
                     <strong><?php echo number_format((float)$resumo['percentual_aprovacao'], 2, ',', '.'); ?>%</strong>
                 </article>
 
-                <article class="summary-card">
+                <article class="cartao-resumo">
                     <span>Soma total das notas</span>
                     <strong><?php echo number_format((float)$resumo['soma_total_notas'], 2, ',', '.'); ?></strong>
                 </article>
             </section>
 
-            <section class="card">
+            <section class="cartao">
                 <h2>Tabela completa dos alunos</h2>
-                <div class="table-wrap">
+                <div class="envoltorio-tabela">
                     <table>
                         <thead>
                             <tr>
@@ -313,7 +313,7 @@ for ($i = 0; $i < $qtdAlunos; $i++) {
                 </div>
             </section>
 
-            <section class="card">
+            <section class="cartao">
                 <h2>Resumo interpretativo</h2>
                 <p><strong>Média da turma:</strong> <?php echo number_format((float)$resumo['media_turma'], 2, ',', '.'); ?></p>
                 <p><strong>Maior média encontrada:</strong> <?php echo number_format((float)$resumo['maior_media'], 2, ',', '.'); ?></p>
